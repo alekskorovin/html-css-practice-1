@@ -38,11 +38,104 @@
                 <ol>
                     <li>Скачать на рабочий стол <a href="mobi.zip">архив "mobi"</a> и разархивировать его &mdash; в дальнейшем мы будем работать с этой заготовкой.</li>
                     <li>
-                        Скачать на рабочий стол и открыть <a href="mobi-home-desktop.psd">PSD-макет "mobi-home-desktop.psd"</a> в Photoshop-e.<br />        
-
+                        Скачать на рабочий стол и открыть <a href="mobi-home-desktop.psd">PSD-макет "mobi-home-desktop.psd"</a> в Photoshop-e.<br />
+                        <img src="images/psd-1.png" alt="Открытый PSD" />
                     </li>
                 </ol>
             </div>
+            <h3>Декомпозиция макета</h3>
+            <p>
+                Если говорить о базовой структуре страницы, то можно выделить следующие независимые компоненты:
+            </p>
+            <img src="images/psd-decomposition.png" alt="Декомпозиция на компоненты" />
+            <ul>
+                <li><b>header</b> &mdash; верхняя часть сайта, хедер, область содержащая логотип и список ссылок.</li>
+                <li><b>carousel</b> &mdash; компонент содержащий список слайдов и навигацию между слайдами.</li>
+                <li><b>features</b> &mdash; список особенностей продукта.</li>
+                <li><b>content</b> &mdash; описание продукта.</li>
+                <li><b>footer</b> &mdash; футер, подвал, область где размещаются копирайты (информация о владельцах этого сайат), дополнительная навигация.</li>
+            </ul>
+            <p>
+                Компоненты идущие между хедером и футером обычно объединяют одним контейнером с названием "main".
+            </p>
+            <p>
+                Давайте сделаем общую структуру и вместо компонентов просто добавим временные картинки с их изображением.
+            </p>
+            <div class="task">
+                <h3>Задание #2</h3>
+                <ol>
+                    <li>Открыть в папке <b>mobi</b> файл <b>index.html</b> с помощью редактора и добавить в элемент <b>body</b> следующий HTML-код:
+<pre><code class="html">    &lt;div class="header"&gt;&lt;/div&gt;
+    &lt;div class="main"&gt;
+        &lt;div class="carousel"&gt;&lt;/div&gt;
+        &lt;div class="features"&gt;&lt;/div&gt;
+        &lt;div class="content"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="footer"&gt;&lt;/div&gt;
+</code></pre>
+                        <p>
+                            Мы добавили контейнеры для наших компонентов. Теперь давайте добавим внутрь контейнеров изображения этих компонентов.
+                        </p>
+                    </li>
+                    <li>
+                        В Photoshop-e в открытом PSD-макете нажать клавишу <b>М</b> и выделить область хедера потянув с левого верхнего угла до правого нижнего.<br />
+                        <img src="images/copy-picture-of-header.png" alt="Выделяем нужную область" /><br />
+                        Затем:
+                        <ul>
+                            <li>нажать <b>Ctrl Shift C</b> (копировать в буфер объединённые слои).</li>
+                            <li>нажать <b>Ctrl N</b> (создать новый документ) и задать ему имя <b>header</b><br />
+                                <img src="images/create-new-file-header.png" alt="Создать новый файл с именем header" />
+                            </li>
+                            <li>
+                                нажать <b>Ctrl V</b> (вставить из буфера изображение)<br />
+                                <img src="images/paste-header.png" alt="Вставить header" />
+                            </li>
+                            <li>
+                                нажать <b>Ctrl Alt Shift S</b> (сохранить изображения для Веб)<br />
+                                <img src="images/save-header.png" alt="Сохранить для веб" />
+                                выбрать <b>PNG-24</b> и нажать кнопку <b>Save...</b> (сохранить).
+                            </li>
+                            <li>
+                                сохранить изображение в подпапке <b>img</b> вашей папки <b>mobi</b> с названием <b>header.png</b>.
+                            </li>
+                        </ul>
+                        Теперь давайте добавим это изображение внутрь элемента <b>div</b> с классом <b>header</b>.
+                    </li>
+                    <li>
+                        Открыть <b>index.html</b> в редакторе кода и обновить то что внутри <b>body</b>:
+<pre><code class="html">    &lt;div class="header"&gt;&lt;img src="img/header.png" /&gt;&lt;/div&gt;
+    &lt;div class="main"&gt;
+        &lt;div class="carousel"&gt;&lt;/div&gt;
+        &lt;div class="features"&gt;&lt;/div&gt;
+        &lt;div class="content"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="footer"&gt;&lt;/div&gt;
+</code></pre>
+                    </li>
+                    <li>
+                        Открыть <b>index.html</b> в браузере.
+                    </li>
+                    <li>
+                        Проделать тоже самое для:
+                        <ul>
+                            <li>carousel</li>
+                            <li>features</li>
+                            <li>content</li>
+                            <li>footer</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <p>
+                Если возникли проблемы с сохранением изображений, вот ссылки на сохранённые изображения:
+            </p>
+            <ul>
+                <li></li>
+            </ul>
+            <p>В итоге в HTML странице мы должны увидеть следующиее:</p>
+            <p>Какие из этих компонентов мы можем сверстать?</p>
+
+
 
             <h2>
                 <a id="pseudo-classes" class="anchor" href="https://alekskorovin.github.io/pseudo-positioning-semantic-animation/" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Псевдо-классы, псевдо-элементы, флоаты, позиционирование.</a>
